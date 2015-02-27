@@ -99,7 +99,7 @@ module Ratyrate
   end
 
   def can_rate?(user, dimension=nil)
-    rates.where(rater_id: user.id, dimension: dimension).size.zero?
+    rates(dimension).where(rater_id: user.id, dimension: dimension).size.zero?
   end
 
   def rates(dimension=nil)
