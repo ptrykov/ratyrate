@@ -34,6 +34,7 @@ module Helpers
     else
       readonly = !current_user || false
     end
+    readonly ||= options[:readOnly]
 
     if options[:imdb_avg] && readonly
       content_tag :div, '', :style => "background-image:url(/assets/mid-star.png);width:61px;height:57px;margin-top:10px;" do
